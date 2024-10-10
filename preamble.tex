@@ -12,6 +12,7 @@
 % \usepackage{mdframed}
 % \usepackage[super]{nth}
 % \usepackage{pxfonts}
+% \usepackage{verbatim}
 % \usepackage{xcolor}
 
 % Document Setup
@@ -24,6 +25,30 @@
 
 % custom colors
 % \definecolor{light-gray}{gray}{0.95}
+
+% pseudocode algorithm definition
+% \newcommand\algorithm[4]
+% {
+%     \begin{mdframed}[backgroundcolor=light-gray, linecolor=light-gray]
+%         \textbf{Algorithm} #1 \\
+%         \hspace*{2em}\textbf{Input:} #2 \\
+%         \hspace*{2em}\textbf{Output:} #3
+%         \lstinputlisting[style=Pseudocode]{code/#4}
+%     \end{mdframed}
+% }
+
+% % custom listing styles
+% \lstdefinestyle{Pseudocode}{
+%     columns=fullflexible,
+%     mathescape=true,
+%     literate=
+%         {Algorithm}{$\textbf{Algorithm }$}{1}
+%         {Input:}{$\textbf{\textit{Input: }}$}{1}
+%         {Output:}{$\textbf{\textit{Output: }}$}{1}
+%         {=}{$\leftarrow{}$}{1}
+%         {==}{$={}$}{1},
+%     morekeywords={if, then, else, for, return, to, do}
+% }
 
 % custom listing styles
 % \lstdefinestyle{Pseudocode}{
