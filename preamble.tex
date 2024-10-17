@@ -12,6 +12,7 @@
 % \usepackage{mdframed}
 % \usepackage[super]{nth}
 % \usepackage{pxfonts}
+% \usepackage{tikz}
 % \usepackage{verbatim}
 % \usepackage{xcolor}
 
@@ -27,27 +28,32 @@
 % \definecolor{light-gray}{gray}{0.95}
 
 % pseudocode algorithm definition
-% \newcommand\algorithm[4]
+% \newcommand\algorithm[5][]
 % {
 %     \begin{mdframed}[backgroundcolor=light-gray, linecolor=light-gray]
-%         \textbf{Algorithm} #1 \\
-%         \hspace*{2em}\textbf{Input:} #2 \\
-%         \hspace*{2em}\textbf{Output:} #3
-%         \lstinputlisting[style=Pseudocode]{code/#4}
+%         \textbf{Algorithm} #2
+%         \begin{description}
+%         [labelwidth=3.5em,labelindent=2em,leftmargin=6em,topsep=0pt,
+%         itemsep=0pt,parsep=0pt]
+%             \item[Input] #3
+%             \item[Output] #4
+%         \end{description}
+%         \lstinputlisting[style=Pseudocode,morekeywords={#1}]{code/#5}
 %     \end{mdframed}
 % }
 
-% % custom listing styles
-% \lstdefinestyle{Pseudocode}{
-%     columns=fullflexible,
-%     mathescape=true,
-%     literate=
-%         {Algorithm}{$\textbf{Algorithm }$}{1}
-%         {Input:}{$\textbf{\textit{Input: }}$}{1}
-%         {Output:}{$\textbf{\textit{Output: }}$}{1}
-%         {=}{$\leftarrow{}$}{1}
-%         {==}{$={}$}{1},
-%     morekeywords={if, then, else, for, return, to, do}
+% pseudocode class definition
+% \newcommand\class[4][]
+% {
+%     \begin{mdframed}[backgroundcolor=light-gray, linecolor=light-gray]
+%         \textbf{Class} #2
+%         \begin{description}
+%         [labelwidth=3.5em,labelindent=2em,leftmargin=6em,topsep=0pt,
+%         itemsep=0pt,parsep=0pt]
+%             \item[Input] #3
+%         \end{description}
+%         \lstinputlisting[style=Pseudocode,morekeywords={#1}]{code/#4}
+%     \end{mdframed}
 % }
 
 % custom listing styles
