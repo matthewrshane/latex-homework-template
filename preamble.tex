@@ -3,6 +3,7 @@
 % Packages
 % \usepackage{amsmath}
 % \usepackage[toc,page]{appendix}
+% \usepackage{caption}
 % \usepackage{enumitem}
 % \usepackage{graphicx}
 % \usepackage{hyperref}
@@ -21,64 +22,77 @@
 \unframedsolutions{}
 \renewcommand{\solutiontitle}{}
 
+% Math commands
+% \newcommand\abs[1]{\left| #1 \right|}
+
 % hyperlinks
 % \hypersetup{hidelinks, frenchlinks=true}
 
 % custom colors
 % \definecolor{light-gray}{gray}{0.95}
+% \definecolor{codegreen}{rgb}{0,0.6,0}
+% \definecolor{codegray}{rgb}{0.5,0.5,0.5}
+% \definecolor{codepurple}{HTML}{C42043}
+% \definecolor{backcolor}{HTML}{F2F2F2}
 
-% pseudocode algorithm definition
-% \newcommand\algorithm[5][]
-% {
-%     \begin{mdframed}[backgroundcolor=light-gray, linecolor=light-gray]
-%         \textbf{Algorithm} #2
-%         \begin{description}
-%         [labelwidth=3.5em,labelindent=2em,leftmargin=6em,topsep=0pt,
-%         itemsep=0pt,parsep=0pt]
-%             \item[Input] #3
-%             \item[Output] #4
-%         \end{description}
-%         \lstinputlisting[style=Pseudocode,morekeywords={#1}]{code/#5}
-%     \end{mdframed}
+% listings setup
+% \lstset{upquote=true}
+% \lstdefinestyle{code}{
+%     backgroundcolor=\color{backcolor},   
+%     commentstyle=\color{codegreen},
+%     keywordstyle=\color{codepurple},
+%     numberstyle=\numberstyle,
+%     stringstyle=\color{codegray},
+%     basicstyle=\footnotesize\ttfamily,
+%     breakatwhitespace=false,
+%     breaklines=true,
+%     captionpos=b,
+%     keepspaces=true,
+%     numbers=left,
+%     numbersep=10pt,
+%     showspaces=false,
+%     showstringspaces=false,
+%     showtabs=false,
+% }
+% \lstset{style=code}
+
+% custom command for left padding zeroes
+% \newcommand\numberstyle[1]{%
+%     \footnotesize
+%     \color{codegray}%
+%     \ttfamily
+%     \ifnum#1<10 0\fi#1 |%
 % }
 
-% pseudocode class definition
-% \newcommand\class[4][]
-% {
-%     \begin{mdframed}[backgroundcolor=light-gray, linecolor=light-gray]
-%         \textbf{Class} #2
-%         \begin{description}
-%         [labelwidth=3.5em,labelindent=2em,leftmargin=6em,topsep=0pt,
-%         itemsep=0pt,parsep=0pt]
-%             \item[Input] #3
-%         \end{description}
-%         \lstinputlisting[style=Pseudocode,morekeywords={#1}]{code/#4}
-%     \end{mdframed}
+% Custom command for code files
+% Usage:
+%   \codefile{language}{file path}[
+%     morekeywords = {...},
+%     deletekeywords = {...}
+%   ]
+% \NewDocumentCommand{\codefile}{m m O{} O{}}{%
+%     \lstinputlisting[
+%         language=#1,
+%         morekeywords={#3},
+%         deletekeywords={#4},
+%         framesep=8pt,
+%         xleftmargin=40pt,
+%         framexleftmargin=40pt,
+%         frame=tb,
+%         framerule=0pt
+%     ]{#2}%
 % }
 
-% custom listing styles
-% \lstdefinestyle{Pseudocode}{
-%     columns=fullflexible,
-%     mathescape=true,
-%     literate=
-%         {Algorithm}{$\textbf{Algorithm }$}{1}
-%         {Input:}{$\textbf{\textit{Input: }}$}{1}
-%         {Output:}{$\textbf{\textit{Output: }}$}{1}
-%         {=}{$\leftarrow{}$}{1}
-%         {==}{$={}$}{1},
-%     morekeywords={if, then, else, for, return, to, do}
-% }
-
-% \lstdefinestyle{C_Code}{
-%     columns=fullflexible,
-%     mathescape=true,
-%     literate=,
-%     keywordstyle=\color{blue},
-%     alsoletter={&},
-%     morekeywords={void, int, const, keytype, index, index&, while, &&, if, else}
+% Custom command for inline code samples
+% Usage:
+%   \codeinline{language}{code}
+% \NewDocumentCommand{\codeinline}{m m}{%
+%     \lstinline[
+%         language=#1
+%     ]|#2|%
 % }
 
 % Header
 \title{XXX-101 Template 1}
 \author{Matthew Shane}
-\date{Due: January 1, 2026}
+\date{Due: January 1, 20XX}
